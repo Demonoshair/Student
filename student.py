@@ -1,3 +1,4 @@
+win=1
 action = 0
 day = 1
 dayNorm = 365
@@ -50,5 +51,8 @@ while(day < dayNorm + 1):
     if study < 1 or money < 1 or action == 0:
         print("Simulation Over")
         break
+        win=0
     day = day+1
     action = 0
+if win==1:
+    print("Поздравляю,",name,"Прожил целый год!")

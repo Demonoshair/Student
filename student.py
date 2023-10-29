@@ -8,8 +8,8 @@ name=input("Назовите своего студента: ")
 print("Вашего студента зовут", name)
 while(day<dayNorm+1):
     print(day)
-    money = money - 5
-    stamina = stamina + 30
+    money = money
+    stamina = stamina + 20
     if stamina>100:
         stamina=100
     if money>100:
@@ -39,10 +39,15 @@ while(day<dayNorm+1):
         money=100
     if study>100:
         study=100
+    if stamina<10:
+        money=money-10
+        study=study-20
+        stamina=stamina+40
+        print("Студент Екстренно отдохнул")
     print("Усталость студента", 100-stamina)
     print("Деньги студента", money)
     print("Успеваемость студента", study)
-    if stamina<1 or study<1 or money<1 or action==0:
+    if  study<1 or money<1 or action==0:
         print("Simulation Over")
         break
     day=day+1

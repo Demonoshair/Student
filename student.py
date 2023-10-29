@@ -1,3 +1,7 @@
+S=0
+H=0
+M=0
+E=0
 win=1
 action = 0
 day = 1
@@ -22,17 +26,20 @@ while(day < dayNorm + 1):
         study = study-10
         stamina = stamina+20
         print("студент сегодня отдыхал")
+        H=H+1
         action = 1
     elif stamina > 10 and money > 10 and action == 0:
         study = study+15
         stamina = stamina-30
         print("студент сегодня учился")
+        S=S+1
         action = 1
     elif stamina > 10 and study > 10 and action == 0:
         money = money+15
         study = study-10
         stamina = stamina-30
         print("студент сегодня работал")
+        M=M+1
         action = 1
     if stamina > 100:
         stamina = 100
@@ -44,6 +51,7 @@ while(day < dayNorm + 1):
         money = money-10
         study = study-20
         stamina = stamina+40
+        E=E+1
         print("Студент Екстренно отдохнул")
     print("Усталость студента", 100-stamina)
     print("Деньги студента", money)
@@ -56,3 +64,8 @@ while(day < dayNorm + 1):
     action = 0
 if win==1:
     print("Поздравляю,",name,"Прожил целый год!")
+print("         Статистика")
+print("За год студент работал:", M)
+print("За год студент учился:", S)
+print("За год студент отдыхал:", H)
+print("За год студент екстренно отдыхал:", E)
